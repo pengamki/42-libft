@@ -14,20 +14,5 @@
 
 int	ft_isprint(int c)
 {
-	return (32 <= c && c <= 126);
+	return ((unsigned)c - 32 < 95);
 }
-
-// int		main(void)
-// {
-// 	char	*s = "ab12!*\t\n";
-// 	printf("og:");
-// 	for (int i = 0; i < 8; i++)
-// 		if (isprint(s[i])) printf(" 1");
-// 		else printf(" 0");
-// 	printf("\n");
-// 	printf("ft:");
-// 	for (int i = 0; i < 8; i++)
-// 		if (ft_isprint(s[i])) printf(" 1");
-// 		else printf(" 0");
-// 	printf("\n");
-// }

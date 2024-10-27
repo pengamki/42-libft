@@ -14,33 +14,24 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t			total;
-	unsigned char	*alloc;
+	void	*new;
 
 	if (nmemb <= 0 || size <= 0)
-		return ((void *)malloc(0));
+		return (malloc(0));
 	if (nmemb > SIZE_MAX / size)
 		return (NULL);
-	total = nmemb * size;
-	alloc = malloc(total);
-	if (!alloc)
+	new = malloc(nmemb * size);
+	if (!new)
 		return (NULL);
-	ft_bzero(alloc, total);
-	return ((void *)alloc);
+	ft_bzero(new, nmemb * size);
+	return (new);
 }
 
-// int main(void)
-// {
-//     char *og = (char *)calloc(10, sizeof(char));
-//     if (og == NULL) return (0);
-//     printf("og(10):");
-//     for (int i = 0; i < 42; i++)
-//         printf(" %d", og[i]);
-//     printf("\n");
-//     char *ft = (char *)ft_calloc(10, sizeof(char));
-//     if (ft == NULL) return (0);
-//     printf("ft(10):");
-//     for (int i = 0; i < 42; i++)
-//         printf(" %d", ft[i]);
-//     printf("\n");
-// }
+// Define the Problem
+// Design the Solution
+// Input and Validation
+// Process the Data
+// Output the Results
+// Error Handling
+// Optimize and Refactor
+// Test and Debug

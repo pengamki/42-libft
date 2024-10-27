@@ -14,20 +14,11 @@
 
 int	ft_isalpha(int c)
 {
-	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'));
+	return (((unsigned)c | 32) - 'a' < 26);
 }
 
-// int		main(void)
-// {
-// 	char	*s = "ab1A!*\t\n";
-// 	printf("og:");
-// 	for (int i = 0; i < 8; i++)
-// 		if (isalpha(s[i])) printf(" 1");
-// 		else printf(" 0");
-// 	printf("\n");
-// 	printf("ft:");
-// 	for (int i = 0; i < 8; i++)
-// 		if (ft_isalpha(s[i])) printf(" 1");
-// 		else printf(" 0");
-// 	printf("\n");
-// }
+// explanation
+// since___ 32 = 00 10 00 00
+// lowercase a = 01 10 00 01
+// uppercase A = 01 00 00 01
+// (unsigned)c | 32 is forcing alphabet to be lowercase

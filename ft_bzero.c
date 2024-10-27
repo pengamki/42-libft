@@ -14,14 +14,19 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*mem;
+	unsigned char	*p;
 
-	mem = (unsigned char *) s;
-	while (n > 0)
+	p = s;
+	while (n >= 4)
 	{
-		*(mem++) = 0;
-		n--;
+		*p++ = 0;
+		*p++ = 0;
+		*p++ = 0;
+		*p++ = 0;
+		n -= 4;
 	}
+	while (n--)
+		*p++ = 0;
 }
 
 // int		main(void)

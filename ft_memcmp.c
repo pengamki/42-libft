@@ -14,25 +14,15 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char	*ptr_s1 = s1;
-	const unsigned char	*ptr_s2 = s2;
-	size_t				i;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-	i = 0;
-	while (i < n)
+	p1 = s1;
+	p2 = s2;
+	while (n--)
 	{
-		if (ptr_s1[i] != ptr_s2[i])
-			return (ptr_s1[i] - ptr_s2[i]);
-		i++;
+		if (*p1++ != *p2++)
+			return (*--p1 - *--p2);
 	}
 	return (0);
 }
-
-// int main(void)
-// {
-//     char *s1 = "ABCDEFGHIJK";
-//     char *s2 = "ABCDEFUandYour...";
-//     // G = 71, U = 85, G - U == -14
-//     printf("og: %d\n", memcmp(s1, s2, 10));
-//     printf("ft: %d\n", ft_memcmp(s1, s2, 10));
-// }

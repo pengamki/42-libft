@@ -14,20 +14,5 @@
 
 int	ft_isdigit(int c)
 {
-	return ('0' <= c && c <= '9');
+	return ((unsigned)c - '0' < 10);
 }
-
-// int		main(void)
-// {
-// 	char	*s = "ab12!*\t\n";
-// 	printf("og:");
-// 	for (int i = 0; i < 8; i++)
-// 		if (isdigit(s[i])) printf(" 1");
-// 		else printf(" 0");
-// 	printf("\n");
-// 	printf("ft:");
-// 	for (int i = 0; i < 8; i++)
-// 		if (ft_isdigit(s[i])) printf(" 1");
-// 		else printf(" 0");
-// 	printf("\n");
-// }

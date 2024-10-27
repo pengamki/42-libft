@@ -14,20 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	return (ft_isdigit(c) || ft_isalpha(c));
+	return (((unsigned)c - '0' < 10) || ((unsigned)c | 32) - 'a' < 26);
 }
-
-// int		main(void)
-// {
-// 	char	*s = "ab12!*\t\n";
-// 	printf("og:");
-// 	for (int i = 0; i < 8; i++)
-// 		if (isalnum(s[i])) printf(" 1");
-// 		else printf(" 0");
-// 	printf("\n");
-// 	printf("ft:");
-// 	for (int i = 0; i < 8; i++)
-// 		if (ft_isalnum(s[i])) printf(" 1");
-// 		else printf(" 0");
-// 	printf("\n");
-// }
